@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Translater</title>
+</head>
+<body bgcolor="#E6E6FA">
+<div class="containers">
+<form id="myForm" method="POST" align-content="center" action="/translate">
+	<textarea class="text-to-translate" placeholder="Text to translate" rows="10" cols="50" name="text_area"></textarea>
+	<br/>
+	<select id="trans1" name="trans1">
+		<option value="null">Translate from Eng to</option>
+		<option value="de">German</option>
+		<option value="pt">Portuguese</option>
+		<option value="fr">French</option>
+		<option value="ko">Korean</option>
+		<option value="it">Italian</option>
+		<option value="es">Spanish</option>
+		<option value="ar">Arabic</option>
+		<option value="ja">Japanese</option>
+	</select>
+	<br/>
+	<select id="trans2" name="trans2">
+		<option value="null">Translate to Eng from</option>
+		<option value="de">German</option>
+		<option value="pt">Portuguese</option>
+		<option value="fr">French</option>
+		<option value="it">Italian</option>
+		<option value="es">Spanish</option>
+	</select>
+	<br/>
+	<br/>
+	<button type="submit" id="trans" style="vertical-align: middle">Translate</button>
+	<br/>
+</form>
+</div>
+<div>
+	{% for i in get_flashed_messages() %}
+	<p><font color="red" style="vertical-align: middle">{{ i }}</font></p>
+	{% endfor %}
+</div>
+<div>
+	<p><font color="blue" style="vertical-align: middle">
+	{{ data2['translations'][0]['translation'] }}
+	</font></p>
+</div>
+<br/><br/><br/><br/><br/><br/><br/>
+<footer>
+	<a href="/" style="text-decoration: none;">Home</a>
+</footer>
+</body>
+</html>

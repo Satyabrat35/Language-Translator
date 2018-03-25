@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Detection</title>
+</head>
+<body bgcolor="#E6E6FA">
+<form id="myForm" method="POST" align-content="center" action="/detect">
+<textarea class="text-to-detect" placeholder="Text to Detect" rows="10" cols="50" name="text_area"></textarea>
+	<br/>
+	<br/>
+	<button type="submit" id="detect" style="vertical-align: middle">Detect Language</button>
+<div>
+	{% for i in get_flashed_messages() %}
+	<p><font color="red" style="vertical-align: middle">{{ i }}</font></p>
+	{% endfor %}
+</div>
+<br/><br/><br/><br/><br/><br/><br/>
+<footer>
+	<a href="/" style="text-decoration: none;">Home</a>
+</footer>
+</body>
+</html>
