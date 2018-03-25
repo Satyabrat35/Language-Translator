@@ -34,11 +34,13 @@ def trans():
 		to_en = request.form.get('trans2')
 
 
-	print(text)
-	print(en_to)
-	print(to_en)
+	#print(text)
+	#print(en_to)
+	#print(to_en)
 
-	if text == '':
+	text1 = text.encode('utf-8')
+
+	if text1 == '':
 		flash('Enter the text')
 		return render_template('home.html')
 
@@ -52,7 +54,7 @@ def trans():
 
 	if en_to != 'null':
 		translation = language_translator.translate(
-			text= str(text),
+			text= str(text1),
 			model_id= 'en-' + str(en_to))
 		data = json.dumps(translation,indent=2,ensure_ascii=False)
 		data2 = json.loads(data)
@@ -61,11 +63,11 @@ def trans():
 
 	if to_en != 'null':
 		translation = language_translator.translate(
-			text=str(text),
+			text=str(text1),
 			model_id= str(to_en) + '-en')
 		data = json.dumps(translation,indent=2,ensure_ascii=False)
 		data2 = json.loads(data)
-		#flash("Translation: {}".format(data2['translations'][0]['translation']))
+		flash("Translation: ")
 		txt = data2['translations'][0]['translation']
 		return render_template('home.html',data2=data2)
 	
@@ -77,7 +79,9 @@ def detection():
 	if request.method == 'POST':
 		text = request.form.get('text_area')
 
-	language = language_translator.identify(str(text))
+	text1 = text.encode('utf-8')	
+
+	language = language_translator.identify(str(text1))
 	data = json.dumps(language,indent=2)
 	data2 = json.loads(data)
 
