@@ -1,0 +1,4 @@
+flask
+watson_developer_cloud
+json
+requests
