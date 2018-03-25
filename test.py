@@ -4,8 +4,8 @@ import request
 from watson_developer_cloud import LanguageTranslatorV2 as LanguageTranslator
 
 language_translator = LanguageTranslator (
-	username = "8cf36c28-6d27-4a70-b143-c4702b31d3e8",
-	password = "NQYn55XI4Q1D"
+	username = "<your_username>",
+	password = "<your_password>"
 	) 
 
 translation = language_translator.translate(

@@ -8,8 +8,8 @@ app = Flask(__name__)
 app.secret_key = '\xc9 \x1e\x8d\x04\xed(t\x01g\rN\xa0*G\xb4`\xca\xc5\xb4R\xd4\xa0\x98c\xfb\xbbP\xb5\xb8\xe0\xd9'
 
 language_translator = LanguageTranslator (
-	username = "8cf36c28-6d27-4a70-b143-c4702b31d3e8",
-	password = "NQYn55XI4Q1D"
+	username = "<your_username>",
+	password = "<your_password>"
 	) 
 
 
